@@ -31,7 +31,7 @@
             <th><?php echo lang('permissions_column_inroles'); ?></th>
             <th>
               <?php if( $this->authorization->is_permitted('create_users') ): ?>
-                <a href="account/manage_permissions/save" class="btn btn-primary btn-small">Create<a>
+                <?php echo anchor('account/manage_permissions/save',lang('website_create'),'class="btn btn-primary btn-small"'); ?>
               <?php endif; ?>
             </th>
           </tr>
