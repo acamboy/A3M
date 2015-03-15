@@ -1,6 +1,8 @@
 # A3M  
 ### 
 
+[![Join the chat at https://gitter.im/donjakobo/A3M](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/donjakobo/A3M?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A3M (Account Authentication & Authorization) is a CodeIgniter 2.x package that leverages bleeding edge web technologies 
 like OpenID and OAuth to create a user-friendly user experience. It gives you the CRUD to get working right away 
 without too much fuss and tinkering! Designed for building webapps from scratch without all that tiresome 
