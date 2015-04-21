@@ -58,9 +58,9 @@ class Connect_google extends CI_Controller {
 		require APPPATH . "libraries/account/google-api-php-client/src/Google/Service/Oauth2.php";
 		
 		// Store values in variables from project created in Google Developer Console
-		$client_id = '476947191236-voia2kkes0ujf8oakltefbjmtvr3qca1.apps.googleusercontent.com';
-		$client_secret = '1DgZDXW5uNfiqeX3P_Q2wSOz';
-		$redirect_uri = 'http://dev.archivesupport.kbb1.com/account/connect_google';
+		$client_id = '';
+		$client_secret = '';
+		$redirect_uri = '';
 		// $simple_api_key = '< Generated API Key >';
 		
 		// Create Client Request to access Google API
