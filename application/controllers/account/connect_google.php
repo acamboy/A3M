@@ -48,7 +48,7 @@ class Connect_google extends CI_Controller {
 	function index() {
 		
 		// Include two files from google-php-client library in controller
-		set_include_path ( get_include_path () . PATH_SEPARATOR . '/sites/dev.archivesupport.kbb1.com/public/application/libraries/account/google-api-php-client/src/Google' );
+		set_include_path ( get_include_path () . PATH_SEPARATOR . 'application/libraries/account/google-api-php-client/src/Google' );
 		require_once APPPATH . "libraries/account/google-api-php-client/src/Google/autoload.php";
 		require APPPATH . "libraries/account/google-api-php-client/src/Google/Client.php";
 		require APPPATH . "libraries/account/google-api-php-client/src/Google/Service/Oauth2.php";
