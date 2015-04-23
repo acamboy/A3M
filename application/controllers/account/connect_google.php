@@ -48,10 +48,10 @@ class Connect_google extends CI_Controller {
 	function index() {
 		
 		// Include two files from google-php-client library in controller
-		set_include_path ( get_include_path () . PATH_SEPARATOR . 'application/libraries/account/google-api-php-client/src/Google' );
-		require_once APPPATH . "libraries/account/google-api-php-client/src/Google/autoload.php";
-		require APPPATH . "libraries/account/google-api-php-client/src/Google/Client.php";
-		require APPPATH . "libraries/account/google-api-php-client/src/Google/Service/Oauth2.php";
+		set_include_path ( get_include_path () . PATH_SEPARATOR . APPPATH .'application/libraries/google-api-php-client/src/Google' );
+		require_once APPPATH . "libraries/google-api-php-client/src/Google/autoload.php";
+		require APPPATH . "libraries/google-api-php-client/src/Google/Client.php";
+		require APPPATH . "libraries/google-api-php-client/src/Google/Service/Oauth2.php";
 		
 		// Store values in variables from project created in Google Developer Console
 		// I guess the correct way to load laod it from CI config/account
