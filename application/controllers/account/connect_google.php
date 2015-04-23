@@ -126,15 +126,15 @@ class Connect_google extends CI_Controller {
 else {
 				// Check if user is signed in on a3m
 				if (! $this->authentication->is_signed_in ()) {
-					$openid_google = array ();
 					
 					if ($userData) {
 						$email = $userData->getEmail ();
-						$openid_google ['fullname'] = $userData->getName ();
-						$openid_google ['gender'] = $userData->getGender ();
-						$openid_google ['language'] = $userData->getLocale ();
-						$openid_google ['firstname'] = $userData->getGivenName (); // google only
-						$openid_google ['lastname'] = $userData->getFamilyName (); // google only
+						$openid_google = array('fullname' => $userData->getName (),
+						$openid_google  'gender' => $userData->getGender (),
+						$openid_google  'language' => $userData->getLocale (),
+						$openid_google  'firstname' => $userData->getGivenName (), // google only
+						$openid_google  'lastname' => $userData->getFamilyName (), // google only
+						);
 					}
 					
 					// Store user's google data in session
