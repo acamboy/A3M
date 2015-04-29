@@ -67,6 +67,11 @@ class Connect_google extends CI_Controller {
 		$client->setClientSecret ( $client_secret );
 		$client->setRedirectUri ( $redirect_uri );
 		$client->addScope ( "email" );
+		// OpenID 2.0 Backward compatiblity (getting the same openid_id):
+		// In order to get the same openid_id (provider_id) as the one, that is already stored for existing users in DB,
+		// you'll need to use EXACTLY the same openid.realm value as you used during the initial OpenID2 flows
+		// Source: http://stackoverflow.com/a/23051643/524743 
+		//         http://stackoverflow.com/q/29229204/524743
 		$client->setOpenidRealm ( $redirect_uri ); // needed to get openid id
 		                                           
 		// Enable SSL?
