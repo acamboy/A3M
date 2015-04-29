@@ -48,6 +48,7 @@ class Connect_google extends CI_Controller {
 	function index() {
 		
 		// Include two files from google-php-client library in controller
+		// to get composer work, set_include_path should contain absolute path to 'google-api-php-client/src/Google' 
 		set_include_path ( get_include_path () . PATH_SEPARATOR . APPPATH .'application/libraries/google-api-php-client/src/Google' );
 		require_once APPPATH . "libraries/google-api-php-client/src/Google/autoload.php";
 		require APPPATH . "libraries/google-api-php-client/src/Google/Client.php";
@@ -65,9 +66,8 @@ class Connect_google extends CI_Controller {
 		$client->setClientId ( $client_id );
 		$client->setClientSecret ( $client_secret );
 		$client->setRedirectUri ( $redirect_uri );
-		$client->addScope ( "https://www.googleapis.com/auth/userinfo.email" );
-		$client->setOpenidRealm ( $redirect_uri ); // needed for backewark OpenID2 compatibility
-		                                           // <-- Som
+		$client->addScope ( "email" );
+		$client->setOpenidRealm ( $redirect_uri ); // needed to get openid id
 		                                           
 		// Enable SSL?
 		maintain_ssl ( $this->config->item ( "ssl_enabled" ) );
@@ -109,10 +109,10 @@ class Connect_google extends CI_Controller {
 			$authUrl = $client->createAuthUrl ();
 			$data ['authUrl'] = $authUrl;
 			header ( 'Location:' . $authUrl );
-			die ();
+			die (); // it makes redirection work :)  
 		}
 		
-		if (isset ( $userData )) {
+		if (isset ( $userData )) { // if authenticantion vs. google succeeded, we can process to sign in procedure
 			// Check if user has connect google to a3m
 			if ($user = $this->account_openid_model->get_by_openid ( $openid_id )) {
 				// Check if user is not signed in on a3m
