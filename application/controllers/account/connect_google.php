@@ -135,10 +135,10 @@ else {
 					if ($userData) {
 						$email = $userData->getEmail ();
 						$openid_google = array('fullname' => $userData->getName (),
-						$openid_google  'gender' => $userData->getGender (),
-						$openid_google  'language' => $userData->getLocale (),
-						$openid_google  'firstname' => $userData->getGivenName (), // google only
-						$openid_google  'lastname' => $userData->getFamilyName (), // google only
+						'gender' => $userData->getGender (),
+						'language' => $userData->getLocale (),
+						'firstname' => $userData->getGivenName (), // google only
+						'lastname' => $userData->getFamilyName (), // google only
 						);
 					}
 					
